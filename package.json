@@ -1,0 +1,31 @@
+{
+  "name": "@fiverr/afterbuild-webpack-plugin",
+  "version": "0.0.1",
+  "description": "A webpack plugin that registers a script to run after the build has finished",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint '**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fiverr/afterbuild-webpack-plugin.git"
+  },
+  "keywords": [
+    "webpack",
+    "webpack-plugin",
+    "build",
+    "after-build",
+    "post-build"
+  ],
+  "author": "Fiverr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fiverr/afterbuild-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/fiverr/afterbuild-webpack-plugin#readme",
+  "devDependencies": {
+    "@fiverr/eslint-config-fiverr": "^3.2.0",
+    "eslint": "^7.1.0"
+  }
+}
