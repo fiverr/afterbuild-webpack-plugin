@@ -12,10 +12,9 @@ jobs:
       - run:
           name: Install dependencies
           command: npm i
-      # Will be uncommented once we have tests in place
-      # - run:
-      #     name: Test
-      #     command: npm t
+      - run:
+          name: Test
+          command: npm t
       - run:
           name: Lint code
           command: npm run lint
