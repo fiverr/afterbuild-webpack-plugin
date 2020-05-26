@@ -4,7 +4,7 @@
   "description": "A webpack plugin that registers a script to run after the build has finished",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "lint": "eslint '**/*.js'"
   },
   "repository": {
@@ -26,6 +26,8 @@
   "homepage": "https://github.com/fiverr/afterbuild-webpack-plugin#readme",
   "devDependencies": {
     "@fiverr/eslint-config-fiverr": "^3.2.0",
-    "eslint": "^7.1.0"
+    "eslint": "^7.1.0",
+    "jest": "^26.0.1",
+    "webpack": "^4.43.0"
   }
 }
