@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/fiverr/afterbuild-webpack-plugin.git"
   },
+  "engines": {
+    "node": ">= 8.0.0"
+  },
   "keywords": [
     "webpack",
     "webpack-plugin",
