@@ -35,8 +35,6 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Set NPM tokens
           command: echo -e $NPMRC > ~/.npmrc
