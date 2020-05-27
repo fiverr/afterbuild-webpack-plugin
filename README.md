@@ -56,7 +56,7 @@ const sendSlackNorification = () => {
 
 module.exports = {
     plugins: [
-        new AfterBuildPlugin(doSomething)
+        new AfterBuildPlugin(sendSlackNorification)
     ]
 };
 ```
