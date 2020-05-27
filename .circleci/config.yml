@@ -1,10 +1,23 @@
 defaults: &defaults
   working_directory: ~/app
   docker:
-    - image: circleci/node:8-browsers
+    - image: circleci/node:14-browsers
 
 version: 2.1
 jobs:
+  install:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install NPM dependencies
+          command: "[ -d node_modules ] || npm i"
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
   test:
     <<: *defaults
     steps:
@@ -18,9 +31,27 @@ jobs:
       - run:
           name: Lint code
           command: npm run lint
+  publish:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Set NPM tokens
+          command: echo -e $NPMRC > ~/.npmrc
+      - run:
+          name: Publish to NPM
+          command: npx published
 
 workflows:
   version: 2.1
   ci-cd:
     jobs:
-      - test
+      - install
+      - test:
+          requires:
+            - install
+      - publish:
+          requires:
+            - test
