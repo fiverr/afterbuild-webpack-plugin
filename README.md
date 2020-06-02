@@ -9,7 +9,7 @@
 
 # AfterBuild Webpack Plugin
 
-A webpack plugin that registers a script to run after the build has finished
+A webpack plugin that registers a callback function to run after the build has finished
 
 ## Requirements
 

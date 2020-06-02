@@ -1,7 +1,7 @@
 {
   "name": "@fiverr/afterbuild-webpack-plugin",
   "version": "1.0.0",
-  "description": "A webpack plugin that registers a script to run after the build has finished",
+  "description": "A webpack plugin that registers a callback function to run after the build has finished",
   "main": "index.js",
   "scripts": {
     "test": "jest",
