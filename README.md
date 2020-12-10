@@ -47,7 +47,7 @@ const AfterBuildPlugin = require('@fiverr/afterbuild-webpack-plugin');
 
 const slackClient = new WebClient('YOUR_SLACK_TOKEN');
 
-const sendSlackNorification = () => {
+const sendSlackNotification = () => {
     slackClient.chat.postMessage({
         text: 'Build passed successfully!',
         channel: 'webpack-builds'
@@ -56,7 +56,7 @@ const sendSlackNorification = () => {
 
 module.exports = {
     plugins: [
-        new AfterBuildPlugin(sendSlackNorification)
+        new AfterBuildPlugin(sendSlackNotification)
     ]
 };
 ```
